@@ -3,6 +3,7 @@ import { Layout, theme } from 'antd';
 import Topbar from './Topbar';
 import Left from './Left';
 import Right from './Right';
+import Homepage from '../pages/Homepage';
 
 const { Content, Footer } = Layout;
 
@@ -18,7 +19,7 @@ const BaseLayout = () => {
         <Layout style={{ padding: '16px 0', background: colorBgContainer }}>
           <Left />
           <Content style={{ padding: '0 24px', minHeight: 400 }}>
-            Content
+            <Homepage />
           </Content>
           <Right />
         </Layout>
