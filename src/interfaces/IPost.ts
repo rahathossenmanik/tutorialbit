@@ -1,0 +1,31 @@
+export interface IPost {
+  author: number;
+  categories: number[];
+  comment_status: string;
+  content: { rendered: string; protected: boolean };
+  date: Date;
+  date_gmt: Date;
+  excerpt: { rendered: string; protected: boolean };
+  featured_media: number;
+  format: string;
+  guid: { rendered: string };
+  id: number;
+  'jetpack-related-posts': any[];
+  jetpack_featured_media_url: string;
+  jetpack_publicize_connections: any[];
+  jetpack_sharing_enabled: boolean;
+  jetpack_shortlink: string;
+  link: string;
+  meta: any[];
+  modified: Date;
+  modified_gmt: Date;
+  ping_status: string;
+  slug: string;
+  status: string;
+  sticky: boolean;
+  tags: number[];
+  template: string;
+  title: { rendered: string };
+  type: string;
+  _links: any;
+}
