@@ -1,8 +1,8 @@
 import { Col, List, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../constants/apis/typewiseArchiveEndpoints';
-import { IPost } from '../interfaces/IPost';
-import LoadingPage from './common/LoadingPage';
+import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
+import { IPost } from '../../interfaces/IPost';
+import LoadingPage from '../common/LoadingPage';
 
 const Homepage = () => {
   const [loading, setLoading] = useState<boolean>(true);
