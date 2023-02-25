@@ -17,6 +17,7 @@ const Topbar = () => {
       label: (
         <img src={process.env.REACT_APP_LOGO_URL} alt='logo' height={20} />
       ),
+      onClick: () => navigate('/'),
     },
     ...courses.map((course) => ({
       key: course.slug,
