@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { courses } from '../constants/json/courses';
 const { Header } = Layout;
 
@@ -15,13 +15,15 @@ const Topbar = () => {
     {
       key: 'logo',
       label: (
-        <img src={process.env.REACT_APP_LOGO_URL} alt='logo' height={20} />
+        <Link to='/'>
+          <img src={process.env.REACT_APP_LOGO_URL} alt='logo' height={20} />
+        </Link>
       ),
       onClick: () => navigate('/'),
     },
     ...courses.map((course) => ({
       key: course.slug,
-      label: course.label,
+      label: <Link to={course.slug}>{course.label}</Link>,
       onClick: () => navigate(course.slug),
     })),
   ];
