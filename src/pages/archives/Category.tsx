@@ -2,9 +2,10 @@ import { Col, List, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
-import { get } from '../../helpers/api_helpers';
+import { get, getFull } from '../../helpers/api_helpers';
 import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
+import { ICategory } from './../../interfaces/ICategory';
 
 const Category = () => {
   const { slug } = useParams();
@@ -20,19 +21,21 @@ const Category = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const category = await get(
+        const category: ICategory[] = await get(
           process.env.REACT_APP_BASE_URL +
             TYPEWISE_ARCHIVE_ENDPOINTS.categoryBySlug(),
           { params: { slug: slug } }
         );
-        const res = await get(
+        const res = await getFull(
           process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.posts(currentPage),
-          { params: { categories: category?.id } }
+            TYPEWISE_ARCHIVE_ENDPOINTS.postsByCategory(
+              currentPage,
+              category[0]?.id
+            )
         );
-        const data = await res.json();
-        const totalPages = res.headers.get('x-wp-totalpages');
-        const totalRows = res.headers.get('x-wp-total');
+        const data = res?.data;
+        const totalPages = res?.headers?.['x-wp-totalpages'];
+        const totalRows = res?.headers?.['x-wp-total'];
         setPosts(data);
         setTotalPages(Number(totalPages));
         setTotalRows(Number(totalRows));
