@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Page404 = () => {
   const navigate = useNavigate();
+
+  document.title = '404 Not Found - Tutorial Bit'
   return (
     <>
       <Result

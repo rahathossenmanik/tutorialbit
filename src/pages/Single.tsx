@@ -25,6 +25,7 @@ const Single = () => {
     fetchBySlug();
   }, [slug]);
 
+  document.title = (post?.title?.rendered || 'Post') + ' - Tutorial Bit';
   return loading ? (
     <LoadingPage />
   ) : (

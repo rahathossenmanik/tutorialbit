@@ -23,6 +23,7 @@ const About = () => {
     fetchAboutPage();
   }, []);
 
+  document.title = 'About Us - Tutorial Bit';
   return loading ? (
     <LoadingPage />
   ) : (

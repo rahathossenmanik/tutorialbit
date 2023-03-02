@@ -9,11 +9,10 @@ import { ICategory } from './../../interfaces/ICategory';
 
 const Category = () => {
   const { slug } = useParams();
-  console.log({ slug });
   const [loading, setLoading] = useState<boolean>(true);
+  const [category, setCategory] = useState<ICategory>();
   const [posts, setPosts] = useState<IPost[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(0);
   const [totalRows, setTotalRows] = useState<number>(0);
 
   // Use Effect to fetch posts by category
@@ -22,22 +21,16 @@ const Category = () => {
       setLoading(true);
       try {
         const category: ICategory[] = await get(
-          process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.categoryBySlug(),
+          process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.categoryBySlug(),
           { params: { slug: slug } }
         );
+        setCategory(category[0]);
         const res = await getFull(
-          process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.postsByCategory(
-              currentPage,
-              category[0]?.id
-            )
+          process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.postsByCategory(currentPage, category[0]?.id)
         );
         const data = res?.data;
-        const totalPages = res?.headers?.['x-wp-totalpages'];
         const totalRows = res?.headers?.['x-wp-total'];
         setPosts(data);
-        setTotalPages(Number(totalPages));
         setTotalRows(Number(totalRows));
       } catch (error) {
         console.log(error);
@@ -46,15 +39,15 @@ const Category = () => {
     };
     fetchPosts();
   }, [currentPage, slug]);
-  console.log({ posts, totalPages, totalRows });
 
+  document.title = (category?.name || 'Category Archive') + ' - Tutorial Bit';
   return loading ? (
     <LoadingPage />
   ) : (
     <>
       <List
-        itemLayout='vertical'
-        size='large'
+        itemLayout="vertical"
+        size="large"
         pagination={{
           onChange: (page) => {
             setCurrentPage(page);
@@ -62,7 +55,7 @@ const Category = () => {
           total: totalRows,
           current: currentPage,
           pageSize: 5,
-          showSizeChanger: false,
+          showSizeChanger: false
         }}
         dataSource={posts}
         renderItem={(post) => (
@@ -73,7 +66,7 @@ const Category = () => {
                   <a
                     href={post.link}
                     dangerouslySetInnerHTML={{
-                      __html: post?.title?.rendered,
+                      __html: post?.title?.rendered
                     }}></a>
                 }
               />
@@ -83,14 +76,14 @@ const Category = () => {
                     <img
                       width={200}
                       style={{ maxWidth: '100%' }}
-                      alt='logo'
-                      src='https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png'
+                      alt="logo"
+                      src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
                     />
                   </Col>
                   <Col span={24} xl={16}>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post?.excerpt?.rendered,
+                        __html: post?.excerpt?.rendered
                       }}></div>
                   </Col>
                 </Row>
