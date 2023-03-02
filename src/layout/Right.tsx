@@ -1,35 +1,10 @@
 import React from 'react';
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, theme } from 'antd';
+import Right1 from '../ads/Right1';
+import Right2 from '../ads/Right2';
+import Right3 from '../ads/Right3';
 
 const { Sider } = Layout;
-
-const items2: MenuProps['items'] = [
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-].map((icon, index) => {
-  const key: string = String(index + 1);
-
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey: number = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
 
 const Right = () => {
   const {
@@ -42,13 +17,9 @@ const Right = () => {
       collapsedWidth='0'
       style={{ background: colorBgContainer }}
       width={250}>
-      <Menu
-        mode='inline'
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
-        style={{ height: '100%' }}
-        items={items2}
-      />
+      <Right1 />
+      <Right2 />
+      <Right3 />
     </Sider>
   );
 };
