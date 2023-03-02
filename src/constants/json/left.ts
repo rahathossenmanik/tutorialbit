@@ -150,15 +150,24 @@ export const left = [
     course: 'mathematics'
   },
   {
-    posts: [{ slug: 'mpi-programming', label: 'MPI' }],
+    posts: [
+      { slug: 'how-to-setup-windows-subsystem-for-linux-manually', label: 'Setup WSL' },
+      { slug: 'how-to-install-and-setup-mpi-environment-in-wsl', label: 'Setup Environment' },
+      { slug: 'write-first-program-in-mpi-programming-with-c', label: 'Getting Started' }
+    ],
     course: 'mpi-programming'
   },
   {
-    posts: [{ slug: 'networking', label: 'Networking' }],
+    posts: [
+      { slug: 'transfer-file-from-client-to-server-using-java-socket-programming-in-localhost', label: 'Transfer File Data' }
+    ],
     course: 'networking'
   },
   {
-    posts: [{ slug: 'operating-system', label: 'OS' }],
+    posts: [
+      { slug: 'sjf-cpu-scheduling-algorithm-with-c-program', label: 'SJF Scheduling' },
+      { slug: 'fcfs-cpu-scheduling-algorithm-with-c-program', label: 'FCFS Scheduling' }
+    ],
     course: 'operating-system'
   }
 ];
