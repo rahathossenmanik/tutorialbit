@@ -136,11 +136,17 @@ export const left = [
     course: 'digital-signal-processing'
   },
   {
-    posts: [{ slug: 'java', label: 'Java' }],
+    posts: [
+      { slug: 'array-arraylist-exercise-solve-1', label: 'Array List Exercise - 1' },
+      { slug: 'review-exercise-array-arraylist-part-2', label: 'Array List Exercise - 2' }
+    ],
     course: 'java'
   },
   {
-    posts: [{ slug: 'mathematics', label: 'Math' }],
+    posts: [
+      { slug: 'three-circle-in-a-rectangle', label: '3 Circle & Rectangle' },
+      { slug: 'problem-of-two-circle-and-a-square', label: '2 Circle & Square' }
+    ],
     course: 'mathematics'
   },
   {
