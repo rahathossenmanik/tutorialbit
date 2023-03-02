@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { get } from '../helpers/api_helpers';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from './../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from './../interfaces/IPost';
+import LoadingPage from './common/LoadingPage';
 
 const About = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [aboutPage, setAboutPage] = useState<IPost>();
 
   useEffect(() => {
@@ -16,11 +18,14 @@ const About = () => {
       } catch (error) {
         console.log(error);
       }
+      setLoading(false);
     };
     fetchAboutPage();
   }, []);
 
-  return (
+  return loading ? (
+    <LoadingPage />
+  ) : (
     <>
       <h1
         dangerouslySetInnerHTML={{
