@@ -1,77 +1,77 @@
 export const left = [
   {
-    slugs: ['artificial-intelligence'],
-    course: 'artificial-intelligence',
-    label: 'AI'
+    posts: [
+      { slug: 'what-is-knowledge-in-ai-artificial-intelligence', label: 'Intro to Knowledge' },
+      { slug: 'what-is-the-cycle-of-knowledge', label: 'Cycle of Knowledge' },
+      { slug: 'knowledge-vs-intelligence', label: 'Knowledge vs Intelligence' },
+      { slug: 'what-is-knowledge-representation-in-ai', label: 'Knowledge Representation' },
+      {
+        slug: 'types-of-knowledge-representation-in-ai-relational-inheritable-inferential-procedural',
+        label: 'Types of KR'
+      },
+      { slug: 'issues-of-knowledge-representation-in-ai', label: 'Representation Issues' },
+      { slug: 'meta-knowledge', label: 'Meta Knowledge' },
+      { slug: 'different-types-of-ai-artificial-intelligence-with-examples', label: 'Types of AI' },
+      { slug: 'what-is-the-current-status-of-ai-artificial-intelligence', label: 'Status of AI' },
+      { slug: 'applications-of-ai-in-daily-life', label: 'Applications of AI' },
+      { slug: 'what-is-the-perception-of-ai-and-what-is-the-conclusion-of-ai', label: 'Perception & Conclusion' }
+    ],
+    course: 'artificial-intelligence'
   },
   {
-    slugs: ['oop-c'],
-    course: 'oop-c',
-    label: 'C++'
+    posts: [{ slug: 'oop-c', label: 'C++' }],
+    course: 'oop-c'
   },
   {
-    slugs: ['communication-engineering'],
-    course: 'communication-engineering',
-    label: 'CE'
+    posts: [{ slug: 'communication-engineering', label: 'CE' }],
+    course: 'communication-engineering'
   },
   {
-    slugs: ['cisco-packet-tracer'],
-    course: 'cisco-packet-tracer',
-    label: 'Cisco'
+    posts: [{ slug: 'cisco-packet-tracer', label: 'Cisco' }],
+    course: 'cisco-packet-tracer'
   },
   {
-    slugs: ['computer-simulation'],
-    course: 'computer-simulation',
-    label: 'CSM'
+    posts: [{ slug: 'computer-simulation', label: 'CSM' }],
+    course: 'computer-simulation'
   },
   {
-    slugs: ['database'],
-    course: 'database',
-    label: 'DBMS'
+    posts: [{ slug: 'database', label: 'DBMS' }],
+    course: 'database'
   },
   {
-    slugs: ['digital-image-processing'],
-    course: 'digital-image-processing',
-    label: 'DIP'
+    posts: [{ slug: 'digital-image-processing', label: 'DIP' }],
+    course: 'digital-image-processing'
   },
   {
-    slugs: ['discrete-mathematics'],
-    course: 'discrete-mathematics',
-    label: 'DM'
+    posts: [{ slug: 'discrete-mathematics', label: 'DM' }],
+    course: 'discrete-mathematics'
   },
   {
-    slugs: ['data-structure'],
-    course: 'data-structure',
-    label: 'DS'
+    posts: [{ slug: 'data-structure', label: 'DS' }],
+    course: 'data-structure'
   },
   {
-    slugs: ['digital-signal-processing'],
-    course: 'digital-signal-processing',
-    label: 'DSP'
+    posts: [{ slug: 'digital-signal-processing', label: 'DSP' }],
+    course: 'digital-signal-processing'
   },
   {
-    slugs: ['java'],
-    course: 'java',
-    label: 'Java'
+    posts: [{ slug: 'java', label: 'Java' }],
+    course: 'java'
   },
   {
-    slugs: ['mathematics'],
-    course: 'mathematics',
-    label: 'Math'
+    posts: [{ slug: 'mathematics', label: 'Math' }],
+    course: 'mathematics'
   },
   {
-    slugs: ['mpi-programming'],
-    course: 'mpi-programming',
-    label: 'MPI'
+    posts: [{ slug: 'mpi-programming', label: 'MPI' }],
+    course: 'mpi-programming'
   },
   {
-    slugs: ['networking'],
-    course: 'networking',
-    label: 'Networking'
+    posts: [{ slug: 'networking', label: 'Networking' }],
+    course: 'networking'
   },
   {
-    slugs: ['operating-system'],
-    course: 'operating-system',
-    label: 'OS'
+    posts: [{ slug: 'operating-system', label: 'OS' }],
+    course: 'operating-system'
   }
 ];

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
+import { BookOutlined } from '@ant-design/icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { left } from '../constants/json/left';
 import { courses } from '../constants/json/courses';
@@ -30,10 +31,15 @@ const Left = () => {
     left.forEach((courseItems) => {
       if (courseItems.course === course) {
         setLeftMenuItems(
-          courseItems.slugs.map((slug) => ({
-            key: slug,
-            label: <Link to={'/' + courseItems.course + '/' + slug}>{courseItems.label}</Link>,
-            onClick: () => navigate('/' + courseItems.course + '/' + slug)
+          courseItems.posts.map((post) => ({
+            key: post.slug,
+            label: (
+              <>
+                <BookOutlined style={{ paddingRight: 8 }} />
+                <Link to={'/' + courseItems.course + '/' + post.slug}>{post.label}</Link>
+              </>
+            ),
+            onClick: () => navigate('/' + courseItems.course + '/' + post.slug)
           }))
         );
       }
