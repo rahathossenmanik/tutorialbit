@@ -1,53 +1,65 @@
-import React from 'react';
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { left } from '../constants/json/left';
+import { courses } from '../constants/json/courses';
 
 const { Sider } = Layout;
 
-const items2: MenuProps['items'] = [
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-].map((icon, index) => {
-  const key: string = String(index + 1);
-
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey: number = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
-
 const Left = () => {
   const {
-    token: { colorBgContainer },
+    token: { colorBgContainer }
   } = theme.useToken();
+  const navigate = useNavigate();
+  const { pathname: path } = useLocation();
+
+  const [course, setCourse] = useState<string>();
+  const [leftMenuItems, setLeftMenuItems] = useState<MenuProps['items']>([]);
+
+  useEffect(() => {
+    const pathArray = path?.split('/');
+    courses.forEach((course) => {
+      if (pathArray.includes(course.slug)) {
+        setCourse(course.slug);
+      }
+    });
+  }, [path]);
+
+  useEffect(() => {
+    left.forEach((courseItems) => {
+      if (courseItems.course === course) {
+        setLeftMenuItems(
+          courseItems.slugs.map((slug) => ({
+            key: slug,
+            label: <Link to={'/' + courseItems.course + '/' + slug}>{courseItems.label}</Link>,
+            onClick: () => navigate('/' + courseItems.course + '/' + slug)
+          }))
+        );
+      }
+    });
+  }, [course, navigate]);
+
+  // const leftMenuItems: MenuProps['items'] =
+  //   left.map((courseItems) => {
+  //     if (courseItems.course === course) {
+  //       return courseItems.slugs.map((slug) => ({
+  //         key: slug,
+  //         label: <Link to={'/' + courseItems.course + '/' + slug}>{courseItems.label}</Link>,
+  //         onClick: () => navigate('/' + courseItems.course + '/' + slug)
+  //       }));
+  //     }
+  //     return null;
+  //   })[0] || [];
 
   return (
-    <Sider
-      breakpoint='md'
-      collapsedWidth='0'
-      style={{ background: colorBgContainer }}
-      width={250}>
+    <Sider breakpoint="md" collapsedWidth="0" style={{ background: colorBgContainer }} width={250}>
       <Menu
-        mode='inline'
+        mode="inline"
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         style={{ height: '100%' }}
-        items={items2}
+        items={leftMenuItems}
       />
     </Sider>
   );
