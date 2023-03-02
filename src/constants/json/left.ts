@@ -23,7 +23,28 @@ export const left = [
     course: 'oop-c'
   },
   {
-    posts: [{ slug: 'communication-engineering', label: 'CE' }],
+    posts: [
+      { slug: 'unipolar-line-coding-with-matlab-source-code-for-encoding-and-decoding', label: 'Unipolar Line Coding' },
+      { slug: 'nrz-l-line-coding-with-matlab-code-for-encoding-and-decoding', label: 'NRZ-L Line Coding' },
+      { slug: 'nrz-i-line-coding-with-matlab-code-for-encoding-and-decoding', label: 'NRZ-I Line Coding' },
+      { slug: 'rz-line-coding-with-matlab-code-for-encoding-and-decoding', label: 'RZ Line Coding' },
+      { slug: 'manchester-line-coding-with-matlab-code-for-encoding-and-decoding', label: 'Manchester Line Coding' },
+      {
+        slug: 'differential-manchester-line-coding-with-matlab-code-for-encoding-and-decoding',
+        label: 'Differential Manchester'
+      },
+      { slug: 'ami-line-coding-with-matlab-code-for-encoding-and-decoding', label: 'AMI Line Coding' },
+      {
+        slug: 'b8zs-scrambling-technique-for-line-coding-with-matlab-code-for-encoding-and-decoding',
+        label: 'B8ZS Scrambling'
+      },
+      {
+        slug: 'hdb3-scrambling-technique-for-line-coding-with-matlab-code-for-encoding-and-decoding',
+        label: 'HDB3 Scrambling'
+      },
+      { slug: 'amplitude-modulation-am-with-matlab-code', label: 'Amplitude Modulation' },
+      { slug: 'frequency-modulation-fm-with-matlab-code', label: 'Frequency Modulation' }
+    ],
     course: 'communication-engineering'
   },
   {
