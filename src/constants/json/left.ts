@@ -103,7 +103,26 @@ export const left = [
     course: 'discrete-mathematics'
   },
   {
-    posts: [{ slug: 'data-structure', label: 'DS' }],
+    posts: [
+      { slug: 'data-structure-introduction', label: 'Introduction' },
+      { slug: 'introduction-to-linked-list', label: 'Linked List' },
+      { slug: 'two-way-list-importance-of-two-way-list-with-example', label: 'Two Way List' },
+      { slug: 'data-structure-in-memory-allocation', label: 'Memory Allocation' },
+      { slug: 'traversing-tree-in-preorder-sequence-using-c', label: 'Preorder Traversal' },
+      { slug: 'traversing-tree-in-inorder-sequence-using-c', label: 'Inorder Traversal' },
+      { slug: 'traversing-tree-in-postorder-sequence-using-c', label: 'Postorder Traversal' },
+      { slug: 'inserting-an-element-in-a-binary-search-tree-with-c', label: 'Insert into BST' },
+      { slug: 'delete-an-element-from-binary-search-tree', label: 'Delete from BST' },
+      { slug: 'insert-an-element-into-heap-with-c', label: 'Insert into Heap' },
+      { slug: 'delete-an-element-from-heap', label: 'Delete from Heap' },
+      { slug: 'polish-notation', label: 'Polish Notation' },
+      { slug: 'everything-about-graph', label: 'Graph Theory' },
+      { slug: 'strongly-connected-graph', label: 'Strongly Connected Graph' },
+      { slug: 'path-matrix-in-data-structure-with-example', label: 'Path Matrix' },
+      { slug: 'difference-between-triangular-matrix-and-tridiagonal-matrix', label: 'Triangular vs Tridiagonal' },
+      { slug: 'warshall-algorithm', label: 'Warshall Algorithm' },
+      { slug: 'everything-of-hashing', label: 'Introduction to Hashing' }
+    ],
     course: 'data-structure'
   },
   {
