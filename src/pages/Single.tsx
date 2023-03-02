@@ -9,7 +9,6 @@ const Single = () => {
   const { slug } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [post, setPost] = useState<IPost>();
-  console.log(post);
 
   useEffect(() => {
     const fetchBySlug = async () => {
