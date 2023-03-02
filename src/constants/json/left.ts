@@ -62,7 +62,19 @@ export const left = [
     course: 'cisco-packet-tracer'
   },
   {
-    posts: [{ slug: 'computer-simulation', label: 'CSM' }],
+    posts: [
+      { slug: 'what-are-all-types-of-simulation-with-examples', label: 'Types of Simulation' },
+      { slug: 'what-type-of-virtualization-completely-simulates-a-real-physical-host', label: 'Real Physical Host' },
+      { slug: 'generate-random-number-using-lcm-built-in-function-in-c', label: 'LCM Random Generator' },
+      {
+        slug: 'aircraft-fighter-simulation-in-cpp-simulation-example-bomber-vs-fighter',
+        label: 'Aircraft Fighter Simulation'
+      },
+      { slug: 'chemical-reactor-simulation-in-cpp-simulation-example', label: 'Chemical Reactor Simulation' },
+      { slug: 'chi-square-test-in-cpp-uniformity-test-of-random-sample', label: 'Chi Square Test' },
+      { slug: 'runs-up-down-test-in-c-independence-test-of-random-number', label: 'Runs Up Down Test' },
+      { slug: 'runs-above-below-test-in-cpp-independence-test-of-random-number', label: 'Runs Above Below Test' }
+    ],
     course: 'computer-simulation'
   },
   {
