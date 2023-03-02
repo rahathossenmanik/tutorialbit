@@ -126,7 +126,13 @@ export const left = [
     course: 'data-structure'
   },
   {
-    posts: [{ slug: 'digital-signal-processing', label: 'DSP' }],
+    posts: [
+      { slug: 'hamming-hanning-rectangular-and-triangular-window-code-in-matlab', label: 'Introduction to Window' },
+      { slug: 'z-transform-with-matlab-code', label: 'Z Transform' },
+      { slug: 'discrete-fourier-transform-dft-along-with-idft-with-matlab-code', label: 'DFT & IDFT' },
+      { slug: 'calculating-cross-correlation-with-matlab-code', label: 'Cross Correlation' },
+      { slug: 'calculating-convolution-sum-with-matlab-code', label: 'Convolution Sum' }
+    ],
     course: 'digital-signal-processing'
   },
   {
