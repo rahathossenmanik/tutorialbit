@@ -48,7 +48,17 @@ export const left = [
     course: 'communication-engineering'
   },
   {
-    posts: [{ slug: 'cisco-packet-tracer', label: 'Cisco' }],
+    posts: [
+      { slug: 'change-host-name-of-cisco-switch-in-cisco-packet-tracer', label: 'Change Host Name' },
+      { slug: 'reset-password-of-cisco-switch-in-cisco-packet-tracer', label: 'Reset Password' },
+      { slug: 'set-or-change-password-of-cisco-switch-in-cisco-packet-tracer', label: 'Set/Reset Password' },
+      { slug: 'disable-a-port-on-cisco-switch-in-cisco-packet-tracer', label: 'Disable a Port' },
+      { slug: 'enabl-a-port-on-cisco-switch-in-cisco-packet-tracer', label: 'Enable a Port' },
+      { slug: 'vlan', label: 'Virtual LAN' },
+      { slug: 'set-ip-address', label: 'Set IP Address' },
+      { slug: 'basic-router-configuration', label: 'Basic Router Configuration' },
+      { slug: 'inter-lan-routing', label: 'Inter LAN Routing' }
+    ],
     course: 'cisco-packet-tracer'
   },
   {
