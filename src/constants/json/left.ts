@@ -19,7 +19,7 @@ export const left = [
     course: 'artificial-intelligence'
   },
   {
-    posts: [{ slug: 'oop-c', label: 'C++' }],
+    posts: [{ slug: 'a-to-z-about-file-input-output-in-c', label: 'A-Z of C++' }],
     course: 'oop-c'
   },
   {
