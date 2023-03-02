@@ -1,70 +1,66 @@
 export const courses = [
   {
     slug: '/courses/artificial-intelligence',
-    label: 'AI',
+    label: 'AI'
   },
   {
     slug: '/courses/oop-c',
-    label: 'C++',
+    label: 'C++'
   },
   {
     slug: '/courses/communication-engineering',
-    label: 'CE',
+    label: 'CE'
   },
   {
     slug: '/courses/cisco-packet-tracer',
-    label: 'Cisco',
+    label: 'Cisco'
   },
   {
     slug: '/courses/computer-simulation',
-    label: 'CSM',
+    label: 'CSM'
   },
   {
     slug: '/courses/database',
-    label: 'DBMS',
+    label: 'DBMS'
   },
   {
     slug: '/courses/digital-image-processing',
-    label: 'DIP',
+    label: 'DIP'
   },
   {
     slug: '/courses/discrete-mathematics',
-    label: 'DM',
+    label: 'DM'
   },
   {
     slug: '/courses/data-structure',
-    label: 'DS',
+    label: 'DS'
   },
   {
     slug: '/courses/digital-signal-processing',
-    label: 'DSP',
+    label: 'DSP'
   },
   {
     slug: '/courses/java',
-    label: 'Java',
+    label: 'Java'
   },
   {
     slug: '/courses/mathematics',
-    label: 'Math',
+    label: 'Math'
   },
   {
     slug: '/courses/mpi-programming',
-    label: 'MPI',
+    label: 'MPI'
   },
   {
     slug: '/courses/networking',
-    label: 'Networking',
+    label: 'Networking'
   },
   {
     slug: '/courses/operating-system',
-    label: 'OS',
+    label: 'OS'
   },
   {
     slug: '/about-us',
-    label: 'About',
-  },
-  {
-    slug: '/contact-us',
-    label: 'Contact',
-  },
+    label: 'About'
+  }
 ];
