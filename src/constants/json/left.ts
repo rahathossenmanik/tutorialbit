@@ -78,11 +78,21 @@ export const left = [
     course: 'computer-simulation'
   },
   {
-    posts: [{ slug: 'database', label: 'DBMS' }],
+    posts: [
+      { slug: 'developing-use-case-diagram', label: 'Use Case Diagram' },
+      { slug: 'comparison-among-mysql-vs-mysqli-vs-pdo', label: 'MySQL vs MySQLi vs PDO' }
+    ],
     course: 'database'
   },
   {
-    posts: [{ slug: 'digital-image-processing', label: 'DIP' }],
+    posts: [
+      { slug: 'how-to-modify-spatial-resolution-of-a-grayscale-image-in-matlab', label: 'Modify Spatial Resolution' },
+      {
+        slug: 'how-to-modify-intensity-level-resolution-of-grayscale-image-in-matlab',
+        label: 'Intensity Level Resolution'
+      },
+      { slug: 'single-value-threshold-from-image-histogram-image-segmentation', label: 'Single Value Threshold' }
+    ],
     course: 'digital-image-processing'
   },
   {
