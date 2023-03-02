@@ -96,7 +96,10 @@ export const left = [
     course: 'digital-image-processing'
   },
   {
-    posts: [{ slug: 'discrete-mathematics', label: 'DM' }],
+    posts: [
+      { slug: 'everything-about-graph', label: 'Introduction to Graph' },
+      { slug: 'difference-between-hamilton-ircuit-and-euler-circuit', label: 'Hamilton vs Euler Circuit' }
+    ],
     course: 'discrete-mathematics'
   },
   {
