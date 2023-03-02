@@ -1,66 +1,62 @@
 export const courses = [
   {
-    slug: '/courses/artificial-intelligence',
+    slug: 'artificial-intelligence',
     label: 'AI'
   },
   {
-    slug: '/courses/oop-c',
+    slug: 'oop-c',
     label: 'C++'
   },
   {
-    slug: '/courses/communication-engineering',
+    slug: 'communication-engineering',
     label: 'CE'
   },
   {
-    slug: '/courses/cisco-packet-tracer',
+    slug: 'cisco-packet-tracer',
     label: 'Cisco'
   },
   {
-    slug: '/courses/computer-simulation',
+    slug: 'computer-simulation',
     label: 'CSM'
   },
   {
-    slug: '/courses/database',
+    slug: 'database',
     label: 'DBMS'
   },
   {
-    slug: '/courses/digital-image-processing',
+    slug: 'digital-image-processing',
     label: 'DIP'
   },
   {
-    slug: '/courses/discrete-mathematics',
+    slug: 'discrete-mathematics',
     label: 'DM'
   },
   {
-    slug: '/courses/data-structure',
+    slug: 'data-structure',
     label: 'DS'
   },
   {
-    slug: '/courses/digital-signal-processing',
+    slug: 'digital-signal-processing',
     label: 'DSP'
   },
   {
-    slug: '/courses/java',
+    slug: 'java',
     label: 'Java'
   },
   {
-    slug: '/courses/mathematics',
+    slug: 'mathematics',
     label: 'Math'
   },
   {
-    slug: '/courses/mpi-programming',
+    slug: 'mpi-programming',
     label: 'MPI'
   },
   {
-    slug: '/courses/networking',
+    slug: 'networking',
     label: 'Networking'
   },
   {
-    slug: '/courses/operating-system',
+    slug: 'operating-system',
     label: 'OS'
-  },
-  {
-    slug: '/about-us',
-    label: 'About'
   }
 ];
