@@ -10,7 +10,7 @@ const { Sider } = Layout;
 
 const Left = () => {
   const {
-    token: { colorBgContainer }
+    token: { colorBgContainer },
   } = theme.useToken();
   const navigate = useNavigate();
   const { pathname: path } = useLocation();
@@ -36,10 +36,12 @@ const Left = () => {
             label: (
               <>
                 <BookOutlined style={{ paddingRight: 8 }} />
-                <Link to={'/' + courseItems.course + '/' + post.slug}>{post.label}</Link>
+                <Link to={'/' + courseItems.course + '/' + post.slug}>
+                  {post.label}
+                </Link>
               </>
             ),
-            onClick: () => navigate('/' + courseItems.course + '/' + post.slug)
+            onClick: () => navigate('/' + courseItems.course + '/' + post.slug),
           }))
         );
       }
@@ -59,12 +61,19 @@ const Left = () => {
   //   })[0] || [];
 
   return (
-    <Sider breakpoint="md" collapsedWidth="0" style={{ background: colorBgContainer }} width={250}>
+    <Sider
+      breakpoint='md'
+      collapsedWidth='0'
+      style={{
+        background: colorBgContainer,
+      }}
+      className='inner-body'
+      width={250}>
       <Menu
-        mode="inline"
+        mode='inline'
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
-        style={{ height: '100%' }}
+        style={{ height: '100%', padding: '10px 0' }}
         items={leftMenuItems}
       />
     </Sider>

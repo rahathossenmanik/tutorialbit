@@ -1,2 +1,12 @@
 @import './post.css';
 @import './overwrite.css';
+
+.main-body {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.inner-body {
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+}

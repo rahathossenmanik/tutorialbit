@@ -11,26 +11,49 @@ const { Content, Footer } = Layout;
 
 const BaseLayout = () => {
   const {
-    token: { colorBgContainer }
+    token: { colorBgContainer },
   } = theme.useToken();
 
   return (
-    <Layout>
+    <Layout className='main-body'>
       <Topbar />
       <Content>
-        <Layout style={{ padding: '16px 0', background: colorBgContainer }}>
+        <Layout style={{ background: colorBgContainer }}>
           <Left />
-          <Content style={{ padding: '0 24px', minHeight: 400 }}>
-            <Routes>
-              {routes.map((route: IRoute, i) => {
-                return <Route key={i} path={route.path} element={route.element} />;
-              })}
-            </Routes>
+          <Content
+            style={{
+              paddingTop: '10px',
+              background: colorBgContainer,
+            }}
+            className='inner-body'>
+            <Layout style={{ background: colorBgContainer }}>
+              <Content style={{ padding: '5px 10px', minHeight: 500 }}>
+                <Routes>
+                  {routes.map((route: IRoute, i) => {
+                    return (
+                      <Route
+                        key={i}
+                        path={route.path}
+                        element={route.element}
+                      />
+                    );
+                  })}
+                </Routes>
+              </Content>
+              <Right />
+            </Layout>
+            <Footer
+              style={{
+                textAlign: 'center',
+                height: 50,
+                paddingTop: 15,
+                paddingBottom: 15,
+              }}>
+              Tutorial Bit 2016-{new Date().getFullYear()} © By Rastercell
+            </Footer>
           </Content>
-          <Right />
         </Layout>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tutorial Bit 2016-{new Date().getFullYear()} © By Rastercell</Footer>
     </Layout>
   );
 };
