@@ -1,6 +1,6 @@
-import { Col, List, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Archive from '../../components/Archive';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
 import { get, getFull } from '../../helpers/api_helpers';
 import { IPost } from '../../interfaces/IPost';
@@ -21,12 +21,17 @@ const Category = () => {
       setLoading(true);
       try {
         const category: ICategory[] = await get(
-          process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.categoryBySlug(),
+          process.env.REACT_APP_BASE_URL +
+            TYPEWISE_ARCHIVE_ENDPOINTS.categoryBySlug(),
           { params: { slug: slug } }
         );
         setCategory(category[0]);
         const res = await getFull(
-          process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.postsByCategory(currentPage, category[0]?.id)
+          process.env.REACT_APP_BASE_URL +
+            TYPEWISE_ARCHIVE_ENDPOINTS.postsByCategory(
+              currentPage,
+              category[0]?.id
+            )
         );
         const data = res?.data;
         const totalRows = res?.headers?.['x-wp-total'];
@@ -45,52 +50,11 @@ const Category = () => {
     <LoadingPage />
   ) : (
     <>
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: (page) => {
-            setCurrentPage(page);
-          },
-          total: totalRows,
-          current: currentPage,
-          pageSize: 5,
-          showSizeChanger: false
-        }}
-        dataSource={posts}
-        renderItem={(post) => (
-          <List.Item key={post.link}>
-            <>
-              <List.Item.Meta
-                title={
-                  <a
-                    href={post.link}
-                    dangerouslySetInnerHTML={{
-                      __html: post?.title?.rendered
-                    }}></a>
-                }
-              />
-              {
-                <Row gutter={[8, 8]}>
-                  <Col span={24} xl={8}>
-                    <img
-                      width={200}
-                      style={{ maxWidth: '100%' }}
-                      alt="logo"
-                      src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                    />
-                  </Col>
-                  <Col span={24} xl={16}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: post?.excerpt?.rendered
-                      }}></div>
-                  </Col>
-                </Row>
-              }
-            </>
-          </List.Item>
-        )}
+      <Archive
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalRows={totalRows}
+        posts={posts}
       />
     </>
   );

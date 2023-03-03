@@ -1,8 +1,8 @@
-import { Col, List, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
+import Archive from './../../components/Archive';
 
 const Homepage = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -14,7 +14,10 @@ const Homepage = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const res = await fetch(process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.posts(currentPage));
+        const res = await fetch(
+          process.env.REACT_APP_BASE_URL +
+            TYPEWISE_ARCHIVE_ENDPOINTS.posts(currentPage)
+        );
         const data = await res.json();
         const totalRows = res.headers.get('x-wp-total');
         setPosts(data);
@@ -32,52 +35,11 @@ const Homepage = () => {
     <LoadingPage />
   ) : (
     <>
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: (page) => {
-            setCurrentPage(page);
-          },
-          total: totalRows,
-          current: currentPage,
-          pageSize: 5,
-          showSizeChanger: false
-        }}
-        dataSource={posts}
-        renderItem={(post) => (
-          <List.Item key={post.link}>
-            <>
-              <List.Item.Meta
-                title={
-                  <a
-                    href={post.link}
-                    dangerouslySetInnerHTML={{
-                      __html: post?.title?.rendered
-                    }}></a>
-                }
-              />
-              {
-                <Row gutter={[8, 8]}>
-                  <Col span={24} xl={8}>
-                    <img
-                      width={200}
-                      style={{ maxWidth: '100%' }}
-                      alt="logo"
-                      src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                    />
-                  </Col>
-                  <Col span={24} xl={16}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: post?.excerpt?.rendered
-                      }}></div>
-                  </Col>
-                </Row>
-              }
-            </>
-          </List.Item>
-        )}
+      <Archive
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalRows={totalRows}
+        posts={posts}
       />
     </>
   );
