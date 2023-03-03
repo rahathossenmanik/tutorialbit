@@ -8,12 +8,13 @@ import LoadingPage from '../common/LoadingPage';
 import { ICategory } from './../../interfaces/ICategory';
 
 const Category = () => {
-  const { slug } = useParams();
+  const { slug, page } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [category, setCategory] = useState<ICategory>();
   const [posts, setPosts] = useState<IPost[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
   const [totalRows, setTotalRows] = useState<number>(0);
+  const pathExceptPage = '/courses/' + slug + '/';
 
   // Use Effect to fetch posts by category
   useEffect(() => {
@@ -55,6 +56,7 @@ const Category = () => {
         currentPage={currentPage}
         totalRows={totalRows}
         posts={posts}
+        pathExceptPage={pathExceptPage}
       />
     </>
   );

@@ -1,21 +1,27 @@
 import React from 'react';
 import { Col, List, PaginationProps, Row } from 'antd';
 import { IPost } from './../interfaces/IPost';
+import { Link } from 'react-router-dom';
 
 interface IArchive {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   totalRows: number;
   currentPage: number;
   posts: IPost[];
+  pathExceptPage: string;
 }
 
 const Archive = (props: IArchive) => {
-  const { setCurrentPage, currentPage, totalRows, posts } = props;
+  const { setCurrentPage, currentPage, totalRows, posts, pathExceptPage } =
+    props;
 
   const pagination: PaginationProps = {
     onChange: (page) => {
       setCurrentPage(page);
     },
+    itemRender: (current, type, originalElement) => (
+      <Link to={pathExceptPage + current}>{originalElement}</Link>
+    ),
     total: totalRows,
     current: currentPage,
     pageSize: 5,

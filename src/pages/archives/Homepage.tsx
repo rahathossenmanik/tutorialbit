@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
 import Archive from './../../components/Archive';
 
 const Homepage = () => {
+  const { page } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [posts, setPosts] = useState<IPost[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
   const [totalRows, setTotalRows] = useState<number>(0);
+  const pathExceptPage = '/';
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -40,6 +43,7 @@ const Homepage = () => {
         currentPage={currentPage}
         totalRows={totalRows}
         posts={posts}
+        pathExceptPage={pathExceptPage}
       />
     </>
   );
