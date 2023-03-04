@@ -1,8 +1,6 @@
 import React from 'react';
 import { Layout, theme } from 'antd';
-import Right1 from '../ads/Right1';
-import Right2 from '../ads/Right2';
-import Right3 from '../ads/Right3';
+import RightSidebar from '../ads/RightSidebar';
 
 const { Sider } = Layout;
 
@@ -18,9 +16,7 @@ const Right = () => {
       trigger={null}
       style={{ background: colorBgContainer }}
       width={250}>
-      <Right1 />
-      <Right2 />
-      <Right3 />
+      <RightSidebar />
     </Sider>
   );
 };
