@@ -1,5 +1,11 @@
 import React from 'react';
 import { Col, List, PaginationProps, Row } from 'antd';
+import {
+  LeftOutlined,
+  RightOutlined,
+  DoubleLeftOutlined,
+  DoubleRightOutlined,
+} from '@ant-design/icons';
 import { IPost } from './../interfaces/IPost';
 import { Link } from 'react-router-dom';
 import Media from './Media';
@@ -20,9 +26,23 @@ const Archive = (props: IArchive) => {
     onChange: (page) => {
       setCurrentPage(page);
     },
-    itemRender: (current, type, originalElement) => (
-      <Link to={pathExceptPage + current}>{originalElement}</Link>
-    ),
+    itemRender: (current, type, originalElement) => {
+      const getContent = () => {
+        switch (type) {
+          case 'prev':
+            return <LeftOutlined />;
+          case 'next':
+            return <RightOutlined />;
+          case 'jump-prev':
+            return <DoubleLeftOutlined />;
+          case 'jump-next':
+            return <DoubleRightOutlined />;
+          default:
+            return current;
+        }
+      };
+      return <Link to={pathExceptPage + current}>{getContent()}</Link>;
+    },
     total: totalRows,
     current: currentPage,
     pageSize: 5,
