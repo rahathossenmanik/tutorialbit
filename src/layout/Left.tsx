@@ -64,6 +64,7 @@ const Left = () => {
     <Sider
       breakpoint='md'
       collapsedWidth='0'
+      trigger={null}
       style={{
         background: colorBgContainer,
       }}

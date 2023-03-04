@@ -13,8 +13,9 @@ const Right = () => {
 
   return (
     <Sider
-      breakpoint='md'
+      breakpoint='lg'
       collapsedWidth='0'
+      trigger={null}
       style={{ background: colorBgContainer }}
       width={250}>
       <Right1 />
