@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, List, PaginationProps, Row } from 'antd';
 import { IPost } from './../interfaces/IPost';
 import { Link } from 'react-router-dom';
+import Media from './Media';
 
 interface IArchive {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -49,12 +50,7 @@ const Archive = (props: IArchive) => {
             {
               <Row gutter={[8, 8]}>
                 <Col span={24} xl={8}>
-                  <img
-                    width={200}
-                    style={{ maxWidth: '100%' }}
-                    alt='logo'
-                    src='https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png'
-                  />
+                  <Media id={post?.featured_media} parent={post?.id} />
                 </Col>
                 <Col span={24} xl={16}>
                   <div
