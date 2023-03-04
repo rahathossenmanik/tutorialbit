@@ -3,6 +3,6 @@ import Homepage from '../pages/archives/Homepage';
 import { IRoute } from './../interfaces/IRoute';
 
 export const pageRoutes: IRoute[] = [
-  { path: '/:page', element: <Homepage />, title: 'Home' },
+  { path: '/page/:page', element: <Homepage />, title: 'Home' },
   { path: '/', element: <Homepage />, title: 'Home' },
 ];

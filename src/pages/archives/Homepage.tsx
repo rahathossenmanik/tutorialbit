@@ -11,7 +11,7 @@ const Homepage = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
   const [totalRows, setTotalRows] = useState<number>(0);
-  const pathExceptPage = '/';
+  const pathExceptPage = '/page/';
 
   useEffect(() => {
     const fetchPosts = async () => {
