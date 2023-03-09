@@ -1,6 +1,5 @@
 import React from 'react';
 import { Result, Button } from 'antd';
-import { Link } from 'react-router-dom';
 
 const Page404 = () => {
   document.title = '404 Not Found - Tutorial Bit';
@@ -11,9 +10,9 @@ const Page404 = () => {
         title='404'
         subTitle='Page Not Found!'
         extra={
-          <Link to='/'>
+          <a href='/'>
             <Button type='primary'>Home</Button>
-          </Link>
+          </a>
         }
       />
     </>

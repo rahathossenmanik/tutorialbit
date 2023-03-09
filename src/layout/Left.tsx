@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
 import { BookOutlined } from '@ant-design/icons';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { left } from '../constants/json/left';
 import { courses } from '../constants/json/courses';
 
@@ -36,9 +36,9 @@ const Left = () => {
             label: (
               <>
                 <BookOutlined style={{ paddingRight: 8 }} />
-                <Link to={'/' + courseItems.course + '/' + post.slug}>
+                <a href={'/' + courseItems.course + '/' + post.slug}>
                   {post.label}
-                </Link>
+                </a>
               </>
             ),
           }))

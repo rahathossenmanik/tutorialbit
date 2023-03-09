@@ -7,7 +7,6 @@ import {
   DoubleRightOutlined,
 } from '@ant-design/icons';
 import { IPost } from './../interfaces/IPost';
-import { Link } from 'react-router-dom';
 import Media from './Media';
 
 interface IArchive {
@@ -41,7 +40,7 @@ const Archive = (props: IArchive) => {
             return current;
         }
       };
-      return <Link to={pathExceptPage + current}>{getContent()}</Link>;
+      return <a href={pathExceptPage + current}>{getContent()}</a>;
     },
     total: totalRows,
     current: currentPage,
