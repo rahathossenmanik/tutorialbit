@@ -19,7 +19,7 @@ const Main = () => {
       );
     case pathArray.includes('page') || path === '/':
       return <Homepage page={pathArray[2]} />;
-    case pathArray?.length === 3:
+    case pathArray?.length === 3 || pathArray?.length === 4:
       return <Single slug={pathArray[2]} />;
     default:
       return <Page404 />;
