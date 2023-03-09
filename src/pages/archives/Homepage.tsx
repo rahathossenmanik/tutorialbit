@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
 import Archive from './../../components/Archive';
 
-const Homepage = () => {
-  const { page } = useParams();
+const Homepage = (props: any) => {
+  const { page } = props;
   const [loading, setLoading] = useState<boolean>(true);
   const [posts, setPosts] = useState<IPost[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);

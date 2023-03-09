@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Archive from '../../components/Archive';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
 import { get, getFull } from '../../helpers/api_helpers';
@@ -7,8 +6,8 @@ import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
 import { ICategory } from './../../interfaces/ICategory';
 
-const Category = () => {
-  const { slug, page } = useParams();
+const Category = (props: any) => {
+  const { slug, page } = props;
   const [loading, setLoading] = useState<boolean>(true);
   const [category, setCategory] = useState<ICategory>();
   const [posts, setPosts] = useState<IPost[]>([]);

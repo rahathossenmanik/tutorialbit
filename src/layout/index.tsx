@@ -3,9 +3,7 @@ import { Layout, theme } from 'antd';
 import Topbar from './Topbar';
 import Left from './Left';
 import Right from './Right';
-import { Route, Routes } from 'react-router-dom';
-import { IRoute } from '../interfaces/IRoute';
-import { routes } from '../routes';
+import Main from '../pages/common/Main';
 
 const { Content, Footer } = Layout;
 
@@ -28,17 +26,7 @@ const BaseLayout = () => {
             className='inner-body'>
             <Layout style={{ background: colorBgContainer }}>
               <Content style={{ padding: '5px 10px', minHeight: 500 }}>
-                <Routes>
-                  {routes.map((route: IRoute, i) => {
-                    return (
-                      <Route
-                        key={i}
-                        path={route.path}
-                        element={route.element}
-                      />
-                    );
-                  })}
-                </Routes>
+                <Main />
               </Content>
               <Right />
             </Layout>
