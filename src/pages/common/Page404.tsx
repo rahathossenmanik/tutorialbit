@@ -1,11 +1,9 @@
 import React from 'react';
 import { Result, Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Page404 = () => {
-  const navigate = useNavigate();
-
-  document.title = '404 Not Found - Tutorial Bit'
+  document.title = '404 Not Found - Tutorial Bit';
   return (
     <>
       <Result
@@ -13,9 +11,9 @@ const Page404 = () => {
         title='404'
         subTitle='Page Not Found!'
         extra={
-          <Button type='primary' onClick={() => navigate('/')}>
-            Home
-          </Button>
+          <Link to='/'>
+            <Button type='primary'>Home</Button>
+          </Link>
         }
       />
     </>

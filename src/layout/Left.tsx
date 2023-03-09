@@ -41,24 +41,11 @@ const Left = () => {
                 </Link>
               </>
             ),
-            onClick: () => navigate('/' + courseItems.course + '/' + post.slug),
           }))
         );
       }
     });
   }, [course, navigate]);
-
-  // const leftMenuItems: MenuProps['items'] =
-  //   left.map((courseItems) => {
-  //     if (courseItems.course === course) {
-  //       return courseItems.slugs.map((slug) => ({
-  //         key: slug,
-  //         label: <Link to={'/' + courseItems.course + '/' + slug}>{courseItems.label}</Link>,
-  //         onClick: () => navigate('/' + courseItems.course + '/' + slug)
-  //       }));
-  //     }
-  //     return null;
-  //   })[0] || [];
 
   return (
     <Sider
