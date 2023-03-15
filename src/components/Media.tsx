@@ -33,8 +33,7 @@ const Media = (props: any) => {
   ) : (
     <>
       <img
-        width={200}
-        style={{ maxWidth: '100%' }}
+        style={{ height: 200, width: '100%' }}
         alt={media?.alt_text || 'Tutorial Bit Post - ' + parent}
         src={media?.source_url || process.env.REACT_APP_ICON_URL}
       />

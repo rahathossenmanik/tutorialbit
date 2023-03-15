@@ -52,7 +52,7 @@ const Archive = (props: IArchive) => {
     <>
       <div className='row'>
         {posts?.map((post, i) => (
-          <div className='col-12 col-sm-6 py-3'>
+          <div className='col-12 col-sm-6 py-3' key={i}>
             <div className='card' style={{ height: '100%', width: '100%' }}>
               <div
                 className='bg-image hover-overlay ripple'
