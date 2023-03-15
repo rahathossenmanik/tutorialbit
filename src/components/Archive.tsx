@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, List, PaginationProps, Row } from 'antd';
+import { Pagination, PaginationProps } from 'antd';
 import {
   LeftOutlined,
   RightOutlined,
@@ -49,40 +49,49 @@ const Archive = (props: IArchive) => {
   };
 
   return (
-    <List
-      itemLayout='vertical'
-      size='large'
-      pagination={pagination}
-      dataSource={posts}
-      renderItem={(post) => (
-        <List.Item key={post.link}>
-          <>
-            <List.Item.Meta
-              title={
-                <a
-                  href={post.link}
+    <>
+      <div className='row'>
+        {posts?.map((post, i) => (
+          <div className='col-12 col-sm-6 py-3'>
+            <div className='card' style={{ height: '100%', width: '100%' }}>
+              <div
+                className='bg-image hover-overlay ripple'
+                data-mdb-ripple-color='light'>
+                <Media id={post?.featured_media} parent={post?.id} />
+                <a href='#!'>
+                  <div
+                    className='mask'
+                    style={{
+                      backgroundColor: 'rgba(251, 251, 251, 0.15)',
+                    }}></div>
+                </a>
+              </div>
+              <div className='card-body'>
+                <h5
+                  className='card-title'
                   dangerouslySetInnerHTML={{
                     __html: post?.title?.rendered,
-                  }}></a>
-              }
-            />
-            {
-              <Row gutter={[8, 8]}>
-                <Col span={24} xl={8}>
-                  <Media id={post?.featured_media} parent={post?.id} />
-                </Col>
-                <Col span={24} xl={16}>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: post?.excerpt?.rendered,
-                    }}></div>
-                </Col>
-              </Row>
-            }
-          </>
-        </List.Item>
-      )}
-    />
+                  }}></h5>
+                <div
+                  className='card-text'
+                  dangerouslySetInnerHTML={{
+                    __html: post?.excerpt?.rendered?.replace(
+                      ' [&hellip;]',
+                      '...'
+                    ),
+                  }}></div>
+                <a href={post.link}>
+                  <button type='button' className='btn btn-primary'>
+                    Read More
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <Pagination {...pagination} />
+    </>
   );
 };
 
