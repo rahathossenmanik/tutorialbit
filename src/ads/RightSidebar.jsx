@@ -1,7 +1,10 @@
+import { Divider } from 'antd';
 import React, { useEffect } from 'react';
 
 const RightSidebar = () => {
   useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
@@ -14,6 +17,7 @@ const RightSidebar = () => {
         data-ad-slot='1282244150'
         data-ad-format='auto'
         data-full-width-responsive='true'></ins>
+      <Divider />
       <ins
         className='adsbygoogle'
         style={{ display: 'block' }}
@@ -21,6 +25,7 @@ const RightSidebar = () => {
         data-ad-slot='2999215158'
         data-ad-format='auto'
         data-full-width-responsive='true'></ins>
+      <Divider />
       <ins
         className='adsbygoogle'
         style={{ display: 'block' }}
