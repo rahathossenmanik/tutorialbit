@@ -31,7 +31,11 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
-    <title>React WordPress Theme</title>
+    <title>Tutorial Bit</title>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6705737578975548"
+      crossorigin="anonymous"></script>
 </head>
     <body>
     <noscript>
