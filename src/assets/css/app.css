@@ -1,5 +1,6 @@
 @import './post.css';
 @import './overwrite.css';
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 .main-body {
   height: 100vh;
