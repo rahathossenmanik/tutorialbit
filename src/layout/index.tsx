@@ -1,9 +1,10 @@
 import React from 'react';
-import { Layout, theme } from 'antd';
+import { Col, FloatButton, Layout, Row, theme } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
 import Topbar from './Topbar';
 import Left from './Left';
-import Right from './Right';
 import Main from '../pages/common/Main';
+import RightSidebar from '../ads/RightSidebar';
 
 const { Content, Footer } = Layout;
 
@@ -11,25 +12,44 @@ const BaseLayout = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const [broken, setBroken] = React.useState(false);
+  const [collapsed, setCollapsed] = React.useState(false);
+  console.log(collapsed);
 
   return (
     <Layout className='main-body'>
       <Topbar />
       <Content>
         <Layout style={{ background: colorBgContainer }}>
-          <Left />
+          <Left
+            collapsed={collapsed}
+            setCollapsed={setCollapsed}
+            setBroken={setBroken}
+          />
+          {/* If Left Menu is Collapsed The Icon will Float */}
+          {broken ? (
+            <FloatButton
+              shape='square'
+              type='primary'
+              style={{ left: 4, bottom: 8 }}
+              icon={<MenuOutlined onClick={() => setCollapsed(!collapsed)} />}
+            />
+          ) : null}
           <Content
             style={{
               paddingTop: '10px',
               background: colorBgContainer,
+              overflowX: 'hidden',
             }}
             className='inner-body'>
-            <Layout style={{ background: colorBgContainer }}>
-              <Content style={{ padding: '5px 10px', minHeight: 500 }}>
+            <Row gutter={[4, 4]}>
+              <Col span={24} md={16} style={{ paddingBottom: 8 }}>
                 <Main />
-              </Content>
-              <Right />
-            </Layout>
+              </Col>
+              <Col span={24} md={8} style={{ paddingBottom: 8 }}>
+                <RightSidebar />
+              </Col>
+            </Row>
             <Footer
               style={{
                 textAlign: 'center',

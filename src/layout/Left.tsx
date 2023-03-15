@@ -8,7 +8,8 @@ import { courses } from '../constants/json/courses';
 
 const { Sider } = Layout;
 
-const Left = () => {
+const Left = (props: any) => {
+  const { collapsed, setCollapsed, setBroken } = props;
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -49,9 +50,14 @@ const Left = () => {
 
   return (
     <Sider
-      breakpoint='md'
+      breakpoint='lg'
       collapsedWidth='0'
       trigger={null}
+      collapsed={collapsed}
+      onBreakpoint={(broken) => {
+        setBroken(broken);
+        broken ? setCollapsed(true) : setCollapsed(false);
+      }}
       style={{
         background: colorBgContainer,
       }}
@@ -60,7 +66,6 @@ const Left = () => {
       <Menu
         mode='inline'
         defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
         style={{ height: '100%', padding: '10px 0' }}
         items={leftMenuItems}
       />
