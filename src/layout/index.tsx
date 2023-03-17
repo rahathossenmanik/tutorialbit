@@ -43,10 +43,10 @@ const BaseLayout = () => {
             }}
             className='inner-body'>
             <Row gutter={[4, 4]}>
-              <Col span={24} md={16} style={{ paddingBottom: 8 }}>
+              <Col span={24} md={16} style={{ padding: 8 }}>
                 <Main />
               </Col>
-              <Col span={24} md={8} style={{ paddingBottom: 8 }}>
+              <Col span={24} md={8} style={{ padding: '8px 0' }}>
                 <RightSidebar />
               </Col>
             </Row>

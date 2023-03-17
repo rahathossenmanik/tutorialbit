@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ArticleBottom from '../ads/ArticleBottom';
+import ArticleTop from '../ads/ArticleTop';
 import { get } from '../helpers/api_helpers';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from './../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from './../interfaces/IPost';
@@ -37,10 +39,13 @@ const Single = (props: any) => {
         dangerouslySetInnerHTML={{
           __html: post?.title?.rendered || '',
         }}></h1>
+      <ArticleTop />
       <div
+        className='single-post'
         dangerouslySetInnerHTML={{
           __html: post?.content?.rendered || '',
         }}></div>
+      <ArticleBottom />
     </>
   );
 };
