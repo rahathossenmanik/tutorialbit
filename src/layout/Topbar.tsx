@@ -1,54 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { Layout, Menu } from 'antd';
-import type { MenuProps } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBIcon,
+  MDBNavbarNav,
+  MDBNavbarItem,
+} from 'mdb-react-ui-kit';
 import { courses } from '../constants/json/courses';
-const { Header } = Layout;
 
-const Topbar = () => {
+const Topbar = (props: any) => {
+  const { toggleShow } = props;
   const { pathname: path } = useLocation();
-  const [selectedKeys, setSelectedKeys] = useState<string[]>();
-
-  const headerMenuItems: MenuProps['items'] = [
-    {
-      key: 'logo',
-      label: (
-        <a href='/'>
-          <img src={process.env.REACT_APP_LOGO_URL} alt='logo' height={20} />
-        </a>
-      ),
-    },
-    ...courses.map((course) => ({
-      key: course.slug,
-      label: <a href={'/courses/' + course.slug}>{course.label}</a>,
-    })),
-    {
-      key: 'about-us',
-      label: <a href='/about-us'>About</a>,
-    },
-  ];
-
-  useEffect(() => {
-    const pathArray = path?.split('/');
-    courses.forEach((course) => {
-      if (pathArray.includes(course.slug)) {
-        setSelectedKeys([course.slug]);
-      }
-    });
-  }, [path]);
+  const pathArray = path?.split('/');
 
   return (
-    <Header style={{ height: 50, paddingInline: 10, lineHeight: '50px' }}>
-      {/* <img src={process.env.REACT_APP_LOGO_URL} alt='logo' height={20} /> */}
-      <Menu
-        theme='dark'
-        mode='horizontal'
-        selectedKeys={selectedKeys}
-        items={headerMenuItems}
-        overflowedIndicator={<MenuOutlined />}
-      />
-    </Header>
+    <MDBNavbar expand='lg' light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarNav className='d-flex flex-row align-items-center w-auto overflow-hidden fixed-top bg-white border-bottom'>
+          <MDBNavbarToggler
+            type='button'
+            aria-label='Toggle navigation'
+            onClick={toggleShow}>
+            <MDBIcon icon='bars' fas />
+          </MDBNavbarToggler>
+          <MDBNavbarBrand href='/'>
+            <img
+              src={process.env.REACT_APP_LOGO_URL}
+              alt='logo'
+              height={20}
+              style={{ maxWidth: 160 }}
+            />
+          </MDBNavbarBrand>
+          {courses.map((course) => (
+            <MDBNavbarItem
+              key={course.slug}
+              tag='a'
+              href={'/courses/' + course.slug}
+              className='py-2 px-2'
+              active={pathArray.includes(course.slug)}>
+              {course.label}
+            </MDBNavbarItem>
+          ))}
+          <MDBNavbarItem tag='a' href='/about-us' className='py-2 px-2'>
+            About
+          </MDBNavbarItem>
+        </MDBNavbarNav>
+        {/* <MDBNavbarNav className='d-flex flex-row justify-content-end w-auto'>
+          <MDBNavbarItem className='me-3 me-lg-0 d-flex align-items-center'>
+            <button type='button' className='btn btn-primary'>
+              Start Learning
+            </button>
+          </MDBNavbarItem>
+        </MDBNavbarNav> */}
+      </MDBContainer>
+    </MDBNavbar>
   );
 };
 

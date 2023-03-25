@@ -25,3 +25,39 @@ h5 {
 h6 {
   font-size: 12px;
 }
+
+.sidebar a:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+.sidebar a {
+  color: #000 !important;
+  font-size: 14px !important;
+}
+.sidebar {
+  top: 42px !important;
+  padding: 0 !important;
+}
+.navbar {
+  padding: 0 !important;
+}
+.navbar a.nav-item {
+  color: #696969 !important;
+  font-size: 16px !important;
+}
+.navbar a.nav-item:hover,
+.navbar a.nav-item a:focus,
+.navbar a.nav-item a:active,
+.navbar a.nav-item.active {
+  background-color: #3b71ca !important;
+  color: #fff !important;
+}
+
+#main-content {
+  padding: 50px 15px 15px 15px;
+}
+
+@media only screen and (min-width: 992px) {
+  #main-content {
+    padding-left: 260px;
+  }
+}
