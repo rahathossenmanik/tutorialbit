@@ -41,6 +41,8 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"
 />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+
 <!-- Google Fonts -->
 <link
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
