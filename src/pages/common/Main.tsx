@@ -18,7 +18,7 @@ const Main = () => {
         <Category slug={pathArray[2] || 'uncategorized'} page={pathArray[3]} />
       );
     case pathArray.includes('page') || path === '/':
-      return <Homepage page={pathArray[2]} />;
+      return <Homepage />;
     case pathArray?.length === 3 || pathArray?.length === 4:
       return <Single slug={pathArray[2]} />;
     default:

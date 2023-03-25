@@ -1,49 +1,64 @@
 import React, { useEffect, useState } from 'react';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from '../../constants/apis/typewiseArchiveEndpoints';
-import { IPost } from '../../interfaces/IPost';
 import LoadingPage from '../common/LoadingPage';
-import Archive from './../../components/Archive';
+import { ICategory } from './../../interfaces/ICategory';
 
-const Homepage = (props: any) => {
-  const { page } = props;
+const Homepage = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [posts, setPosts] = useState<IPost[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
-  const [totalRows, setTotalRows] = useState<number>(0);
-  const pathExceptPage = '/page/';
+  const [categories, setCategories] = useState<ICategory[]>([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchCategories = async () => {
       setLoading(true);
       try {
         const res = await fetch(
           process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.posts(currentPage)
+            TYPEWISE_ARCHIVE_ENDPOINTS.categories()
         );
         const data = await res.json();
-        const totalRows = res.headers.get('x-wp-total');
-        setPosts(data);
-        setTotalRows(Number(totalRows));
+        setCategories(data);
       } catch (error) {
         console.log(error);
       }
       setLoading(false);
     };
-    fetchPosts();
-  }, [currentPage]);
+    fetchCategories();
+  }, []);
 
   document.title = 'Home - Tutorial Bit';
   return loading ? (
     <LoadingPage />
   ) : (
     <>
-      <Archive
-        setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-        totalRows={totalRows}
-        posts={posts}
-        pathExceptPage={pathExceptPage}
-      />
+      <div className='row'>
+        {categories?.map((category, i) =>
+          category?.count > 0 ? (
+            <>
+              <div className='col-12 col-sm-6 py-3' key={i}>
+                <div className='card' style={{ height: '100%', width: '100%' }}>
+                  <div className='card-body d-flex flex-column justify-content-between'>
+                    <h4
+                      className='card-title'
+                      dangerouslySetInnerHTML={{
+                        __html: category?.name,
+                      }}></h4>
+                    <div
+                      className='card-text mb-3'
+                      dangerouslySetInnerHTML={{
+                        __html: category?.description,
+                      }}></div>
+                    <a href={category.link}>
+                      <button type='button' className='btn btn-primary'>
+                        Start Learning
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : null
+        )}
+      </div>
     </>
   );
 };
