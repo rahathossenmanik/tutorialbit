@@ -8,6 +8,7 @@ const Left = (props: any) => {
   const { isShow } = props;
   const navigate = useNavigate();
   const { pathname: path } = useLocation();
+  const pathArray = path?.split('/');
 
   const [course, setCourse] = useState<string>();
   const [leftMenuItems, setLeftMenuItems] = useState<
@@ -18,18 +19,17 @@ const Left = (props: any) => {
   >([]);
 
   useEffect(() => {
-    const pathArray = path?.split('/');
     courses.forEach((course) => {
       if (pathArray.includes(course.slug)) {
         setCourse(course.slug);
       }
     });
-  }, [path]);
+  }, [pathArray]);
 
   useEffect(() => {
-    left.forEach((courseItems) => {
-      if (courseItems.course === course) {
-        setLeftMenuItems(courseItems.posts);
+    left.forEach((courseItem) => {
+      if (courseItem.course === course) {
+        setLeftMenuItems(courseItem.posts);
       }
     });
   }, [course, navigate]);
@@ -48,7 +48,7 @@ const Left = (props: any) => {
               href={'/' + course + '/' + menuItem.slug}
               action
               className='border-0'
-              active={false}
+              active={pathArray.includes(menuItem.slug)}
               aria-current='true'>
               <i className='far fa-bookmark me-3'></i>
               {menuItem?.label}
