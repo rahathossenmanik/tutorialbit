@@ -1,11 +1,14 @@
 import React from 'react';
-import { Result, Spin } from 'antd';
+import Loader from './../../components/Loader';
 
 const LoadingPage = () => {
   document.title = 'Loading...';
   return (
     <>
-      <Result icon={<Spin size="large" />} style={{ paddingTop: '40vh' }} />
+      <div className='loading-page flex-column'>
+        <Loader />
+        <h1>Reading</h1>
+      </div>
     </>
   );
 };
