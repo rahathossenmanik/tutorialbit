@@ -32,3 +32,23 @@
   border-radius: 10px;
   border: 3px solid #ffffff;
 }
+
+/* 404 Page */
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 132px);
+}
+.page-404 h1 {
+  font-size: 8em;
+}
+.page-404 h1 span#digit1 {
+  color: #ea222c;
+}
+.page-404 h1 span#digit2 {
+  color: #1076ba;
+}
+.page-404 h1 span#digit3 {
+  color: #f47820;
+}
