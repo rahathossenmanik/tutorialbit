@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import Homepage from './../archives/Homepage';
 import About from './../About';
-import Category from './../archives/Category';
 import Single from '../Single';
 import Page404 from './Page404';
+import { left } from './../../constants/json/left';
 
 const Main = () => {
   const { pathname: path } = useLocation();
@@ -15,7 +15,15 @@ const Main = () => {
       return <About />;
     case pathArray.includes('courses'):
       return (
-        <Category slug={pathArray[2] || 'uncategorized'} page={pathArray[3]} />
+        <Navigate
+          to={
+            `/${pathArray[2]}/${
+              left.filter((course) => course.course === pathArray[2])[0]
+                ?.posts[0]?.slug
+            }` || '/'
+          }
+          replace={true}
+        />
       );
     case pathArray.includes('page') || path === '/':
       return <Homepage />;
