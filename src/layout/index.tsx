@@ -4,6 +4,7 @@ import Left from './Left';
 import Main from '../pages/common/Main';
 import RightSidebar from '../ads/RightSidebar';
 import './basic.css';
+import NavBar from './NavBar';
 
 const BaseLayout = () => {
   const [isShow, setIsShow] = useState(false);
@@ -12,7 +13,8 @@ const BaseLayout = () => {
 
   return (
     <>
-      <Left isShow={isShow} />
+      {/* <Left isShow={isShow} /> */}
+      <NavBar />
       <Topbar toggleShow={toggleShow} />
       <main id='main-content'>
         <div className='row'>

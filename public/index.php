@@ -8,9 +8,10 @@
     <link rel="shortcut icon" href="https://tutorialbit.com/wp-content/uploads/2023/02/Tutorial-Bit.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="title" content="Computer Science Drive">
     <meta
       name="description"
-      content="Web site created using create-react-wptheme"
+      content="Free Tutorial for Computer Science, Programming, Web Development and so on."
     />
     <link rel="apple-touch-icon" href="https://tutorialbit.com/wp-content/uploads/2023/02/Tutorial-Bit.png" />
     <!--
@@ -31,7 +32,7 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
-    <title>Tutorial Bit</title>
+    <title>Computer Science Drive</title>
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6705737578975548"
@@ -49,10 +50,12 @@
   rel="stylesheet"
 />
 <!-- MDB -->
-<link
+<!-- <link
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
   rel="stylesheet"
-/>
+/> -->
+<!-- Tailwind CSS -->
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
     <body>
     <noscript>
