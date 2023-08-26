@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@devloco/react-scripts-wptheme": "3.4.1-wp.1",
+        "@iconify/react": "^4.1.1",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
@@ -40,5 +41,6 @@
         ]
     },
     "homepage": "/wp-content/themes/tutorialbit",
-    "browserLaunchTo": "http://ttb-theme.test"
+    "browserLaunchTo": "http://ttb-theme.test",
+    "devDependencies": {}
 }
