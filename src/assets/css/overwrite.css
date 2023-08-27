@@ -64,9 +64,9 @@ pre {
   padding: 15px;
   font-size: 13pt;
   tab-size: 4;
-  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.75);
 }
 
 .sidebar a:not(:last-child) {
