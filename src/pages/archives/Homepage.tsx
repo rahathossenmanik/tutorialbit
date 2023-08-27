@@ -11,7 +11,10 @@ const Homepage = () => {
     const fetchCategories = async () => {
       setLoading(true);
       try {
-        const res = await fetch(process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.categories());
+        const res = await fetch(
+          process.env.REACT_APP_BASE_URL +
+            TYPEWISE_ARCHIVE_ENDPOINTS.categories()
+        );
         const data = await res.json();
         setCategories(data);
       } catch (error) {
@@ -22,37 +25,39 @@ const Homepage = () => {
     fetchCategories();
   }, []);
 
-  document.title = 'Home - Tutorial Bit';
+  document.title = 'Home - Computer Science Drive';
   return loading ? (
     <LoadingPage />
   ) : (
     <>
-      <div className="row">
-        <ul className="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-2">
+      <div className='row'>
+        <ul className='mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-2'>
           {categories.map((category, idx) =>
             category?.count > 0 ? (
-              <li className="border rounded-lg p-4 pb-2">
-                <div className="space-y-2">
+              <li className='border rounded-lg p-4 pb-2'>
+                <div className='space-y-2'>
                   <a href={category.link}>
                     <h4
-                      className="text-gray-800 font-semibold hover:text-indigo-500"
+                      className='text-gray-800 font-semibold hover:text-indigo-500'
                       dangerouslySetInnerHTML={{
-                        __html: category?.name
+                        __html: category?.name,
                       }}></h4>
                   </a>
                   <p
-                    className="text-gray-600 text-sm"
+                    className='text-gray-600 text-sm'
                     dangerouslySetInnerHTML={{
-                      __html: category?.description
+                      __html: category?.description,
                     }}></p>
                 </div>
-                <div className="pt-2 mt-2 border-t text-right">
-                  <div className="flex items-start justify-between">
+                <div className='pt-2 mt-2 border-t text-right'>
+                  <div className='flex items-start justify-between'>
                     <div>
-                      <span className="text-gray-600 text-sm">{category?.count} Lessons</span>
+                      <span className='text-gray-600 text-sm'>
+                        {category?.count} Lessons
+                      </span>
                     </div>
                     <a href={category.link}>
-                      <button className="text-gray-700 text-sm border rounded-lg px-3 py-2 duration-150  hover:text-indigo-500 hover:bg-gray-100">
+                      <button className='text-gray-700 text-sm border rounded-lg px-3 py-2 duration-150  hover:text-indigo-500 hover:bg-gray-100'>
                         Practice
                       </button>
                     </a>

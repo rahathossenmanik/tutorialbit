@@ -35,7 +35,7 @@ const BaseLayout = () => {
             target='_blank'
             rel='noopener noreferrer'
             className='font-semibold hover:text-indigo-500'>
-            Tutorial Bit
+            CS-Drive
           </a>{' '}
           2016-{new Date().getFullYear()} © By{' '}
           <a

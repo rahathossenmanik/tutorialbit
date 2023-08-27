@@ -11,9 +11,13 @@ const About = () => {
   useEffect(() => {
     const fetchAboutPage = async () => {
       try {
-        const res = await get(process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.aboutPage(), {
-          params: { slug: 'about-us' }
-        });
+        const res = await get(
+          process.env.REACT_APP_BASE_URL +
+            TYPEWISE_ARCHIVE_ENDPOINTS.aboutPage(),
+          {
+            params: { slug: 'about-us' },
+          }
+        );
         if (res.length === 1) setAboutPage(res[0]);
       } catch (error) {
         console.log(error);
@@ -23,18 +27,18 @@ const About = () => {
     fetchAboutPage();
   }, []);
 
-  document.title = 'About Us - Tutorial Bit';
+  document.title = 'About Us - CS-Drive';
   return loading ? (
     <LoadingPage />
   ) : (
     <>
       <h1
         dangerouslySetInnerHTML={{
-          __html: aboutPage?.title?.rendered || ''
+          __html: aboutPage?.title?.rendered || '',
         }}></h1>
       <div
         dangerouslySetInnerHTML={{
-          __html: aboutPage?.content?.rendered || ''
+          __html: aboutPage?.content?.rendered || '',
         }}></div>
     </>
   );
