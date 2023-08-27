@@ -19,7 +19,7 @@ const NavBar = () => {
         className={`sticky top-0 pt-1 z-50 bg-white w-full md:text-sm md:border-none ${
           isMenuOpen ? 'shadow-lg rounded-b-xl md:shadow-none' : ''
         }`}>
-        <div className="items-center gap-x-14 px-2 max-w-screen-xl mx-auto md:flex">
+        <div className="items-center gap-x-14 px-2 mx-auto md:flex">
           <div className="flex items-center justify-between md:block">
             <a href="/">
               <img src="https://www.floatui.com/logo.svg" width={120} height={50} alt="Float UI logo" />
@@ -40,7 +40,9 @@ const NavBar = () => {
                 return (
                   <li key={index}>
                     <button
-                      className="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 duration-150"
+                      className={`w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 duration-150 ${
+                        activeMenuItem === index ? 'text-gray-900 bg-gray-100' : ''
+                      }`}
                       onClick={() => setActiveMenuItem(activeMenuItem !== index ? index : false)}>
                       {item.title}
                       {item?.courses?.length > 0 &&
