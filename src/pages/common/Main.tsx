@@ -20,7 +20,7 @@ const Main = () => {
             `/${pathArray[2]}/${
               left.filter((course) => course.course === pathArray[2])[0]
                 ?.posts[0]?.slug
-            }` || '/'
+            }/` || '/'
           }
           replace={true}
         />
