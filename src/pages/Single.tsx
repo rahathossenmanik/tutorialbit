@@ -14,13 +14,9 @@ const Single = (props: any) => {
   useEffect(() => {
     const fetchBySlug = async () => {
       try {
-        const res = await get(
-          process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.postBySlug(),
-          {
-            params: { slug: slug },
-          }
-        );
+        const res = await get(process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.postBySlug(), {
+          params: { slug: slug }
+        });
         if (res.length === 1) setPost(res[0]);
       } catch (error) {
         console.log(error);
@@ -35,17 +31,25 @@ const Single = (props: any) => {
     <LoadingPage />
   ) : (
     <>
-      <h1
-        dangerouslySetInnerHTML={{
-          __html: post?.title?.rendered || '',
-        }}></h1>
-      <ArticleTop />
-      <div
-        className='single-post'
-        dangerouslySetInnerHTML={{
-          __html: post?.content?.rendered || '',
-        }}></div>
-      <ArticleBottom />
+      <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+        <header className="mb-4 lg:mb-6 not-format">
+          <h1
+            className="mb-2 text-3xl font-bold leading-tight text-gray-900 lg:text-4xl dark:text-white"
+            dangerouslySetInnerHTML={{
+              __html: post?.title?.rendered || ''
+            }}></h1>
+          <p className="text-base font-light text-gray-500 dark:text-gray-400">
+            <time title="February 8th, 2022">{new Date(post?.date as Date)?.toDateString()}</time>
+          </p>
+        </header>
+        <ArticleTop />
+        <div
+          className="single-post space-y-4 text-gray-800"
+          dangerouslySetInnerHTML={{
+            __html: post?.content?.rendered || ''
+          }}></div>
+        <ArticleBottom />
+      </article>
     </>
   );
 };

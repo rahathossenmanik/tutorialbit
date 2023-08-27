@@ -19,7 +19,7 @@ const NavBar = () => {
         className={`sticky top-0 pt-1 z-50 bg-white w-full md:text-sm md:border-none ${
           isMenuOpen ? 'shadow-lg rounded-b-xl md:shadow-none' : ''
         }`}>
-        <div className="items-center gap-x-14 px-7 max-w-screen-xl mx-auto md:flex">
+        <div className="items-center gap-x-14 px-2 max-w-screen-xl mx-auto md:flex">
           <div className="flex items-center justify-between md:block">
             <a href="/">
               <img src="https://www.floatui.com/logo.svg" width={120} height={50} alt="Float UI logo" />

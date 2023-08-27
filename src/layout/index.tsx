@@ -28,8 +28,19 @@ const BaseLayout = () => {
             height: 50,
             paddingTop: 15,
             paddingBottom: 15
-          }}>
-          Tutorial Bit 2016-{new Date().getFullYear()} © By Rastercell
+          }}
+          className="text-gray-800">
+          <a href="/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-indigo-500">
+            Tutorial Bit
+          </a>{' '}
+          2016-{new Date().getFullYear()} © By{' '}
+          <a
+            href="https://rastercell.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" font-semibold hover:text-indigo-500">
+            Rastercell
+          </a>
         </footer>
       </main>
     </>
