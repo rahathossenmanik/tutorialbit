@@ -52,11 +52,12 @@ h6 {
   color: #fff !important;
 }
 
-#main-content {
-  padding: 50px 15px 15px 15px;
+#main-content,
+#full-content {
+  padding: 0px 15px 15px 15px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
   #main-content {
     padding-left: 260px;
   }

@@ -11,10 +11,7 @@ const Homepage = () => {
     const fetchCategories = async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          process.env.REACT_APP_BASE_URL +
-            TYPEWISE_ARCHIVE_ENDPOINTS.categories()
-        );
+        const res = await fetch(process.env.REACT_APP_BASE_URL + TYPEWISE_ARCHIVE_ENDPOINTS.categories());
         const data = await res.json();
         setCategories(data);
       } catch (error) {
@@ -30,32 +27,30 @@ const Homepage = () => {
     <LoadingPage />
   ) : (
     <>
-      <div className='row'>
+      <div className="row">
         {categories?.map((category, i) =>
           category?.count > 0 ? (
-            <>
-              <div className='col-12 col-sm-6 py-3' key={i}>
-                <div className='card' style={{ height: '100%', width: '100%' }}>
-                  <div className='card-body d-flex flex-column justify-content-between'>
-                    <h4
-                      className='card-title'
-                      dangerouslySetInnerHTML={{
-                        __html: category?.name,
-                      }}></h4>
-                    <div
-                      className='card-text mb-3'
-                      dangerouslySetInnerHTML={{
-                        __html: category?.description,
-                      }}></div>
-                    <a href={category.link}>
-                      <button type='button' className='btn btn-primary'>
-                        Start Learning
-                      </button>
-                    </a>
-                  </div>
+            <div className="col-12 col-sm-6 py-3" key={i}>
+              <div className="card" style={{ height: '100%', width: '100%' }}>
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <h4
+                    className="card-title"
+                    dangerouslySetInnerHTML={{
+                      __html: category?.name
+                    }}></h4>
+                  <div
+                    className="card-text mb-3"
+                    dangerouslySetInnerHTML={{
+                      __html: category?.description
+                    }}></div>
+                  <a href={category.link}>
+                    <button type="button" className="btn btn-primary">
+                      Start Learning
+                    </button>
+                  </a>
                 </div>
               </div>
-            </>
+            </div>
           ) : null
         )}
       </div>

@@ -1,158 +1,177 @@
 export const courses = [
   {
     slug: 'artificial-intelligence',
-    label: 'AI',
+    label: 'AI'
   },
   {
     slug: 'oop-c',
-    label: 'C++',
+    label: 'C++'
   },
   {
     slug: 'communication-engineering',
-    label: 'CE',
+    label: 'CE'
   },
   {
     slug: 'cisco-packet-tracer',
-    label: 'Cisco',
+    label: 'Cisco'
   },
   {
     slug: 'computer-simulation',
-    label: 'CSM',
+    label: 'CSM'
   },
   {
     slug: 'database',
-    label: 'DBMS',
+    label: 'DBMS'
   },
   {
     slug: 'digital-image-processing',
-    label: 'DIP',
+    label: 'DIP'
   },
   {
     slug: 'discrete-mathematics',
-    label: 'DM',
+    label: 'DM'
   },
   {
     slug: 'data-structure',
-    label: 'DS',
+    label: 'DS'
   },
   {
     slug: 'digital-signal-processing',
-    label: 'DSP',
+    label: 'DSP'
   },
   {
     slug: 'java',
-    label: 'Java',
+    label: 'Java'
   },
   {
     slug: 'mathematics',
-    label: 'Math',
+    label: 'Math'
   },
   {
     slug: 'mpi-programming',
-    label: 'MPI',
+    label: 'MPI'
   },
   {
     slug: 'networking',
-    label: 'Networking',
+    label: 'Networking'
   },
   {
     slug: 'operating-system',
-    label: 'OS',
-  },
+    label: 'OS'
+  }
 ];
 
 export const csCourses = [
   {
     slug: 'artificial-intelligence',
     label: 'Artificial Intelligence',
-    icon: 'ri:robot-2-line',
+    icon: 'ri:robot-2-line'
   },
   {
     slug: 'communication-engineering',
     label: 'Communication Engineering',
-    icon: 'game-icons:satellite-communication',
+    icon: 'game-icons:satellite-communication'
   },
   {
     slug: 'cisco-packet-tracer',
     label: 'Cisco Packet Tracer',
-    icon: 'simple-icons:cisco',
+    icon: 'simple-icons:cisco'
   },
   {
     slug: 'computer-simulation',
     label: 'Computer Simulation',
-    icon: 'carbon:user-simulation',
+    icon: 'carbon:user-simulation'
   },
   {
     slug: 'database',
     label: 'Database Management System',
-    icon: 'bi:database-fill',
+    icon: 'bi:database-fill'
   },
   {
     slug: 'digital-image-processing',
     label: 'Digital Image Processing',
-    icon: 'ic:baseline-image-search',
+    icon: 'ic:baseline-image-search'
   },
   {
     slug: 'discrete-mathematics',
     label: 'Discrete Mathematics',
-    icon: 'ph:graph-fill',
+    icon: 'ph:graph-fill'
   },
   {
     slug: 'data-structure',
     label: 'Data Structure',
-    icon: 'carbon:data-structured',
+    icon: 'carbon:data-structured'
   },
   {
     slug: 'digital-signal-processing',
     label: 'Digital Signal Processing',
-    icon: 'arcticons:signalgenerator',
+    icon: 'arcticons:signalgenerator'
   },
   {
     slug: 'mathematics',
     label: 'Mathematics',
-    icon: 'tabler:math',
+    icon: 'tabler:math'
   },
   {
     slug: 'mpi-programming',
     label: 'MPI Programming',
-    icon: 'material-symbols:business-messages',
+    icon: 'material-symbols:business-messages'
   },
   {
     slug: 'networking',
     label: 'Computer Networking',
-    icon: 'dashicons:networking',
+    icon: 'dashicons:networking'
   },
   {
     slug: 'operating-system',
     label: 'Operating System',
-    icon: 'simple-icons:linux',
-  },
+    icon: 'simple-icons:linux'
+  }
 ];
 
 export const programmingCourses = [
   {
     slug: 'oop-c',
     label: 'C++',
-    icon: 'skill-icons:cpp',
+    icon: 'skill-icons:cpp'
   },
   {
     slug: 'java',
     label: 'Java',
-    icon: 'bxl:java',
+    icon: 'bxl:java'
   },
   {
     slug: 'mpi-programming',
     label: 'MPI Programming',
-    icon: 'material-symbols:business-messages',
-  },
+    icon: 'material-symbols:business-messages'
+  }
 ];
 
 export const webCourses = [
   {
     slug: 'database',
     label: 'Database Management System',
-    icon: 'bi:database-fill',
-  },
+    icon: 'bi:database-fill'
+  }
 ];
 
 export const miscellaneous = [];
+
+export const navigation = [
+  {
+    title: 'Computer Science',
+    courses: csCourses
+  },
+  {
+    title: 'Programming',
+    courses: programmingCourses
+  },
+  {
+    title: 'Web Development',
+    courses: webCourses
+  },
+  {
+    title: 'Miscellaneous',
+    courses: miscellaneous
+  }
+];

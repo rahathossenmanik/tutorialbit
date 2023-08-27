@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
-import Topbar from './Topbar';
-import Left from './Left';
+import React from 'react';
 import Main from '../pages/common/Main';
 import RightSidebar from '../ads/RightSidebar';
 import './basic.css';
 import NavBar from './NavBar';
+import LeftBar from './LeftBar';
+import { useLocation } from 'react-router-dom';
 
 const BaseLayout = () => {
-  const [isShow, setIsShow] = useState(false);
-
-  const toggleShow = () => setIsShow(!isShow);
+  const { pathname: path } = useLocation();
 
   return (
     <>
-      {/* <Left isShow={isShow} /> */}
       <NavBar />
-      <Topbar toggleShow={toggleShow} />
-      <main id='main-content'>
-        <div className='row'>
-          <div className='col-12 col-md-8 p-2'>
+      {path !== '/' ? <LeftBar /> : null}
+      <main id={path !== '/' ? 'main-content' : 'full-content'}>
+        <div className="grid grid-cols-3 gap-2">
+          <div className="col-span-3 md:col-span-2 px-3 py-5">
             <Main />
           </div>
-          <div className='col-12 col-md-4 p-2'>
+          <div className="col-span-0 md:col-span-1 px-1 py-5">
             <RightSidebar />
           </div>
         </div>
@@ -30,7 +27,7 @@ const BaseLayout = () => {
             textAlign: 'center',
             height: 50,
             paddingTop: 15,
-            paddingBottom: 15,
+            paddingBottom: 15
           }}>
           Tutorial Bit 2016-{new Date().getFullYear()} © By Rastercell
         </footer>
