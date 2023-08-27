@@ -5,11 +5,19 @@ import { get } from '../helpers/api_helpers';
 import { TYPEWISE_ARCHIVE_ENDPOINTS } from './../constants/apis/typewiseArchiveEndpoints';
 import { IPost } from './../interfaces/IPost';
 import LoadingPage from './common/LoadingPage';
+import { left } from '../constants/json/left';
+import { useLocation } from 'react-router-dom';
 
 const Single = (props: any) => {
   const { slug } = props;
+  const { pathname: path } = useLocation();
+  const pathArray = path?.split('/');
+
   const [loading, setLoading] = useState<boolean>(true);
   const [post, setPost] = useState<IPost>();
+  const [course, setCourse] = useState<string>('');
+  const [previous, setPrevious] = useState<string>('');
+  const [next, setNext] = useState<string>('');
 
   useEffect(() => {
     const fetchBySlug = async () => {
@@ -25,6 +33,21 @@ const Single = (props: any) => {
     };
     fetchBySlug();
   }, [slug]);
+
+  useEffect(() => {
+    left.forEach((item) => {
+      if (pathArray.includes(item.course)) {
+        setCourse(item.course);
+        const posts = item?.posts;
+        posts?.forEach((post, i) => {
+          if (slug === post.slug) {
+            if (i > 0) setPrevious(posts[i - 1].slug);
+            if (i < posts.length - 1) setNext(posts[i + 1].slug);
+          }
+        });
+      }
+    });
+  }, [slug, pathArray]);
 
   document.title = (post?.title?.rendered || 'Post') + ' - Tutorial Bit';
   return loading ? (
@@ -50,6 +73,18 @@ const Single = (props: any) => {
           }}></div>
         <ArticleBottom />
       </article>
+      <div className="mt-8 flex justify-between">
+        <a
+          href={previous ? '/' + course + '/' + previous : '/'}
+          className="block py-2 px-4 text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg">
+          {previous ? 'Back' : 'Home'}
+        </a>
+        <a
+          href={next ? '/' + course + '/' + next : '/'}
+          className="block py-2 px-4 text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg">
+          {next ? 'Next' : 'Home'}
+        </a>
+      </div>
     </>
   );
 };

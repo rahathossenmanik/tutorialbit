@@ -78,13 +78,13 @@ const LeftBar = () => {
 
   return (
     <>
-      <nav className="fixed top-12.5 left-0 pl-1 w-0 h-full bg-white space-y-8 overflow-auto lg:w-64">
-        <div className="sticky top-0 pt-5 bg-white">
+      <nav className="fixed top-0 left-0 pl-1 w-0 h-full bg-white space-y-8 overflow-auto lg:w-64">
+        <div className="sticky top-0 pt-20 bg-white">
           <div className="px-1">
             <SearchBox placeholder="Search..." />
           </div>
         </div>
-        <div className="text-[0.9rem] space-y-6">
+        <div className="text-[0.9rem] space-y-6 pb-2">
           <div className="text-gray-600 px-1">
             <ul>
               {leftMenuItems?.map((menuItem: any, idx: number) => (
