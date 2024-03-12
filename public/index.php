@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-    <link rel="shortcut icon" href="https://cs-drive.com/wp-content/uploads/2023/08/CS-Drive.png" />
+    <link rel="shortcut icon" href="https://tutorialsheet.com/wp-content/uploads/2023/08/CS-Drive.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="title" content="Computer Science Drive">
@@ -13,7 +13,7 @@
       name="description"
       content="Free Tutorial for Computer Science, Programming, Web Development and so on."
     />
-    <link rel="apple-touch-icon" href="https://cs-drive.com/wp-content/uploads/2023/08/CS-Drive.png" />
+    <link rel="apple-touch-icon" href="https://tutorialsheet.com/wp-content/uploads/2023/08/CS-Drive.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
