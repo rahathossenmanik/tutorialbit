@@ -1,46 +1,46 @@
 {
-    "name": "tutorialbit",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@devloco/react-scripts-wptheme": "3.4.1-wp.1",
-        "@iconify/react": "^4.1.1",
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.3.2",
-        "@testing-library/user-event": "^7.1.2",
-        "axios": "^1.3.4",
-        "mdb-react-ui-kit": "^5.1.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-router-dom": "^6.8.1",
-        "typescript": "^4.9.5"
-    },
-    "scripts": {
-        "crabuild": "react-scripts build",
-        "craeject": "react-scripts eject",
-        "crastart": "react-scripts start",
-        "cratest": "react-scripts test",
-        "build": "wptheme-scripts build",
-        "start": "wptheme-scripts start",
-        "wpbuild": "wptheme-scripts wpbuild",
-        "wpstart": "wptheme-scripts wpstart"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "homepage": "/wp-content/themes/tutorialbit",
-    "browserLaunchTo": "http://ttb-theme.test",
-    "devDependencies": {}
+  "name": "tutorialbit",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@devloco/react-scripts-wptheme": "3.4.1-wp.1",
+    "@iconify/react": "^4.1.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^1.3.4",
+    "mdb-react-ui-kit": "^5.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "crabuild": "react-scripts build",
+    "craeject": "react-scripts eject",
+    "crastart": "react-scripts start",
+    "cratest": "react-scripts test",
+    "build": "wptheme-scripts --openssl-legacy-provider build",
+    "start": "wptheme-scripts --openssl-legacy-provider start",
+    "wpbuild": "wptheme-scripts wpbuild",
+    "wpstart": "wptheme-scripts wpstart"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "/wp-content/themes/tutorialbit",
+  "browserLaunchTo": "http://tutorial-sheet.test",
+  "devDependencies": {}
 }
