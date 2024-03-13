@@ -23,7 +23,7 @@ const NavBar = () => {
           <div className="flex items-center justify-between md:block">
             <a href="/">
               <img
-                src="https://tutorialsheet.com/wp-content/uploads/2023/08/CS-Drive-Full.png"
+                src="https://tutorialsheet.com/wp-content/uploads/2024/03/tts-logo.png"
                 width={180}
                 height={50}
                 alt="Float UI logo"
